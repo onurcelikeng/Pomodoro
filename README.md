@@ -1,8 +1,11 @@
 # Pomodoro_Xamarin
 #hackwithmvp 
 
-#Developers
+
+# Developers
 
 Elif Seray Donmez : @esdonmez
+
 Onur Çelik : @onurcelikeng
+
 Ersin Yıldız : @eersinyildizz
