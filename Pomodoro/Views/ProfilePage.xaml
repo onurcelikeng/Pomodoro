@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Pomodoro.Views.ProfilePage"
+    xmlns:vm="clr-namespace:Pomodoro;" 
+    Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:ProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="tab_logout.png" Clicked="Logout_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+            Margin="10"
+            VerticalOptions="StartAndExpand">
+
+                <StackLayout BackgroundColor="White" Orientation="Horizontal">
+
+                    <Image Source="profile.png" HeightRequest="60" WidthRequest="60" Margin="0,0,5,0" />
+                    
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Onur Çelik" FontAttributes="None" FontSize="16" TextColor="Black" HorizontalTextAlignment="Start" AbsoluteLayout.LayoutBounds=".5,150,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+                        <Label Text="onurcelik@outlook.com" FontAttributes="None" FontSize="14" TextColor="Black" HorizontalTextAlignment="Start" AbsoluteLayout.LayoutBounds=".5,150,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+                    </StackLayout>
+
+                </StackLayout>
+                
+            <StackLayout
+                   HorizontalOptions="FillAndExpand"
+                   Spacing="0">
+
+                <Label
+                    Margin="5,10,5,5"
+                    Text="Çalışma Süresi"
+                    TextColor="#FFA733"
+                    HorizontalOptions="Start"/>
+
+                <Picker
+                    x:Name="picker1"
+                    Title="Select"
+                    Margin="5,0,5,10"
+                    ItemDisplayBinding="{Binding}"
+                    SelectedItem="{Binding}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>5</x:String>
+                            <x:String>10</x:String>
+                            <x:String>15</x:String>
+                            <x:String>20</x:String>
+                            <x:String>25</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label
+                    Margin="5,10,5,5"
+                    Text="Kısa Mola"
+                    TextColor="#FFA733"
+                    HorizontalOptions="Start"/>
+
+                <Picker
+                    x:Name="picker2"
+                    Title="Select"
+                    Margin="5,0,5,10"
+                    ItemDisplayBinding="{Binding}"
+                    SelectedItem="{Binding}">
+                     <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label
+                    Margin="5,10,5,5"
+                    Text="Uzun Mola"
+                    TextColor="#FFA733"
+                    HorizontalOptions="Start"/>
+
+                <Picker 
+                    x:Name="picker3"
+                    Title="Select"
+                    Margin="5,0,5,10"
+                    ItemDisplayBinding="{Binding}"
+                    SelectedItem="{Binding}">
+                     <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>5</x:String>
+                            <x:String>10</x:String>
+                            <x:String>15</x:String>
+                            <x:String>20</x:String>
+                            <x:String>25</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                    
+                <Label
+                    Margin="5,10,5,5"
+                    Text="Uzun Mola Aralığı"
+                    TextColor="#FFA733"
+                    HorizontalOptions="Start"/>
+
+                 <Picker 
+                    x:Name="picker4"
+                    Title="Select"
+                    Margin="5,0,5,10"
+                    ItemDisplayBinding="{Binding}"
+                    SelectedItem="{Binding}">
+                     <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Button
+                  x:Name="button"
+                  Text="Save"
+                  TextColor="White"
+                  BackgroundColor="#FFA733"
+                  BorderRadius="10"
+                  BorderColor="#FFA733"
+                  BorderWidth="2"
+                  WidthRequest="50" 
+                  HeightRequest="40"
+                  Margin="20,0,20,20"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="CenterAndExpand"
+                  Clicked="Save_Clicked"/>
+            </StackLayout>
+            
+        </StackLayout>
+
+
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

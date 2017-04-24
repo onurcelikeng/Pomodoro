@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:vm="clr-namespace:Pomodoro.Views;" 
+    x:Class="Pomodoro.Views.LoginPage" 
+    BackgroundColor="#FFA733">
+
+    <ContentPage.Content>
+        
+        <StackLayout
+          VerticalOptions="CenterAndExpand"
+          Margin="20">
+            
+            <Label
+                Text="Log in with your Pomodoro account"
+                TextColor="White"
+                HorizontalOptions="Center"/>
+
+            <StackLayout
+               HorizontalOptions="FillAndExpand"
+               Spacing="0">
+
+                <Entry x:Name="email" Placeholder="Email" Margin="0,0,0,0"/>
+                
+               <Entry x:Name="password" Placeholder="Password" Margin="0,3,0,0"/>
+                
+            </StackLayout>
+            
+            <StackLayout
+               Orientation="Horizontal"
+               HorizontalOptions="CenterAndExpand"
+               Spacing="30">
+                
+               <Button
+                  x:Name="registerButton"
+                  Text="Register"
+                  TextColor="White"
+                  BackgroundColor="#FFA733"
+                  BorderRadius="15"
+                  BorderColor="White"
+                  BorderWidth="2"
+                  HeightRequest="40"
+                  WidthRequest="150" Clicked="RegisterButton_Clicked"/>
+                
+               <Button
+                  x:Name="loginButton"
+                  Text="Log in"
+                  TextColor="#FFA733"
+                  BackgroundColor="White"
+                  BorderRadius="15"
+                  HeightRequest="40"
+                  WidthRequest="150" Clicked="LoginButton_Clicked"/>
+                
+            </StackLayout>
+            
+       </StackLayout>
+               
+    </ContentPage.Content>
+    
+</ContentPage>

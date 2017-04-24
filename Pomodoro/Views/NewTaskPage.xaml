@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Pomodoro.Views.NewTaskPage"
+    Title="{Binding Title}">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            
+            <Label Text="Project Task" FontSize="Medium" />
+            <Entry x:Name="task" Placeholder="task" FontSize="Small" />
+
+            <Label Text="Priority" FontSize="Medium" />
+            <Entry x:Name="priority" Placeholder="priority" FontSize="Small" />
+            
+            <Label Text="Category" FontSize="Medium" />
+            <Entry x:Name="category" Placeholder="category" Text="{Binding Item.Description}" FontSize="Small"/>
+
+            <Label Text="Description" FontSize="Medium" />
+            <Entry x:Name="description" Placeholder="description" Text="{Binding Item.Description}" FontSize="Small"/>
+
+            <Label Text="Expected Work Time" FontSize="Medium" />
+            <Entry x:Name="expectedWork" Placeholder="expected work time" Text="{Binding Item.Description}" FontSize="Small"/>
+            
+            <Button
+                  x:Name="addButton"
+                  Text="Save"
+                  TextColor="White"
+                  BackgroundColor="#FFA733"
+                  BorderRadius="15"
+                  BorderColor="White"
+                  BorderWidth="2"
+                  HeightRequest="40"
+                Margin="10,0,10,0"
+                  HorizontalOptions="FillAndExpand"
+            Clicked="addButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

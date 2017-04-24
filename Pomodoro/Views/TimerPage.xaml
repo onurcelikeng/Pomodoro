@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Pomodoro.Views.TimerPage"
+    Title="{Binding Title}" >
+    
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        
+            <StackLayout Margin="30" HeightRequest="100" BackgroundColor="White" VerticalOptions="FillAndExpand">
+
+                <Grid>
+                        <Image Source="green.png"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label x:Name="minute" Text="24" FontSize="40" TextColor="White"/>
+                            <Label Text=":" FontSize="40" TextColor="White"/>
+                            <Label x:Name="second" Text="59" FontSize="40" TextColor="White"/>
+                        </StackLayout>
+                </Grid>
+                
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Proje : "></Label>
+                    <Label x:Name="project"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Görev : "></Label>
+                    <Label x:Name="task"></Label>
+                </StackLayout>
+            </StackLayout>
+
+            <Button
+                  x:Name="button"
+                  Text="Finish Task"
+                  TextColor="White"
+                  BackgroundColor="#FFA733"
+                  BorderRadius="10"
+                  BorderColor="#FFA733"
+                  BorderWidth="2"
+                  WidthRequest="50" 
+                  HeightRequest="40"
+                  Margin="20,0,20,20"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="CenterAndExpand"
+                  Clicked="Button_Clicked"/>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Pomodoro.Views.TaskPage"
+    Title="{Binding Title}" >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="tab_add.png" Clicked="AddTask_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+        <StackLayout>
+            <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                            <MenuItem  CommandParameter="{Binding Id}"
+                               Text="Finish" IsDestructive="false" Clicked="FinishTask_Clicked"/>
+                            <MenuItem  CommandParameter="{Binding Id}"
+                               Text="Delete" IsDestructive="True" Clicked="DeleteTask_Clicked" />
+                         </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal">   
+                                <Image Source="{Binding isFinish}" HeightRequest="50" WidthRequest="50" Margin="5,0,0,0"/>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Title}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" Font="Bold"/>
+                                    <Label Text="{Binding Category}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="15" />
+                                    <Label Text="{Binding Description}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                    <Label Text="{Binding ExpectedWorkTime}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                                </StackLayout>
+                                <Image Source="{Binding Priority}" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
