@@ -1,4 +1,4 @@
-# Pomodoro_Xamarin
+# Pomodoro
 >Xamarin.Forms project for #hackwithmvp
 
 ## Requirement
