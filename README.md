@@ -1,5 +1,5 @@
 # Pomodoro_Xamarin
->hackwithmvp 
+>Xamarin.Forms project for #hackwithmvp
 
 ## Requirement
 * Xamarin SDK
